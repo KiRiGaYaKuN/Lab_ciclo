@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">StopWatch</string>
+    <string name="start">Iniciar</string>
+    <string name="stop">Detener</string>
+    <string name="reset">Reiniciar</string>
+    <string name="vueltas">Vuelta</string>
+</resources>
