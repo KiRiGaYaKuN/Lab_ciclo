@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
     //contar los segundos cuando el cronometro esta en ejecucion
     private int seconds = 0;
     //Determinar si el cronometro esta en ejecucion
+    private int contador = 0;
+
     private boolean vuelta;
 
     private boolean reset;
@@ -38,9 +40,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickSave(View view) {
-        if (running)
-            vuelta=true;
 
+        if (running) {
+            contador++;
+            vuelta = true;
+        }
     }
 
     public void onClickStop(View view) {
@@ -51,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         running=false;
         reset=true;
         seconds=0;
+        contador = 0;
     }
 
             public void onSaveInstanceState(Bundle savedInstanceState) {
@@ -87,6 +92,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
+                if(contador == 5)
+                    running = false;
 
                 if(running)
                     seconds ++;
